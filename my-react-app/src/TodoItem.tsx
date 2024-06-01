@@ -1,10 +1,14 @@
 // src/TodoItem.jsx
 import React, { FC } from "react";
+import { Todo } from "./types";
 
 
+interface TodoItemProps{
+    todo: Todo[];
+    deleteTodo:(id:number)=>void
+}
 
-
-const TodoItem = ({ todo, deleteTodo }) => {
+const TodoItem:FC<TodoItemProps> = ({ todo, deleteTodo }) => {
   return (
     <li>
       {todo.text}
